@@ -1,5 +1,5 @@
 
-###Introduction
+### Introduction
 
 
 PyDif is Python library for automatic differentiation, a computational technique for evaluating derivatives that has several distinct advantages compared to alternative computer-based methods for differentiation.
@@ -21,6 +21,8 @@ Users can leverage our software for their own applications, such as optimization
 This library is largely still a work in progess and comes with no guarantees of any kind.
 
 The project is licensed under the MIT License.  
+
+For a prettier latex presentation, check out the ipynb version of this readme [here](docs/pydif_docs_final.ipynb)
 
 [![Build Status](https://travis-ci.org/pydif/cs207-FinalProject.svg?branch=master)](https://travis-ci.org/pydif/cs207-FinalProject)
 
@@ -53,9 +55,9 @@ Please refer to the "How to Use Package" section for guidance on how to correctl
 
 
 
-###Background
+### Background
 
-####Chain Rule
+#### Chain Rule
 
 In calculus,  the derivative of the composition of two or more functions is defined as:
 
@@ -80,7 +82,7 @@ $$\dot{F}(x) = 2xcos(x^{2})$$
 
 Using this rule, one can calculate the derivatives of increasinly complex functions, all while only needing to calculate the derivatives of a series of elementary functions.
 
-####Computational Graph
+#### Computational Graph
 
 The computation graph describes the order of calculations done to compute the derivative. For example consider the funcion $f\left(x, y, z\right) = \dfrac{1}{xyz} + \sin\left(\dfrac{1}{x} + \dfrac{1}{y} + \dfrac{1}{z}\right)$ where we want to evaluate the partial derivatives at (1, 2, 3). The table representation of the graph would look like this. Each row of the table represents one elementary step in the calculation. The function in each row is an elementary function on a combination of earlier rows, which lets us step by step build up the derivative by repeatedly applying the chain rule and at the same time we can also evaluate the function. The table can also be presented in a graph format, but this quickly becomes unwiedly for complicated functions. 
 
@@ -128,7 +130,7 @@ $y = (x^2 + 2 x x^{\prime} \epsilon)$
 
 Notice here that by evaluating $y = x^2$ at $x\leftarrow x + \epsilon x^{\prime}$, we have calculated its derivative ($2x$)! Neat! 
 
-In our implementation of automatic differentiation, dual numbers will be used to keep track of a function's value and it's derivative simulatenously.
+In our implementation of automatic differentiation, dual numbers is used to keep track of a function's value and it's derivative simulatenously.
 
 
 #### Elementary Functions
@@ -183,7 +185,7 @@ Notice that by choosing different values for the seed vector $\textbf{p}$ allows
 
 Typically, we would only be interested in the action of the Jacobian on some vector. The use of this seed vector allows us to compute the components of the Jacobian that we are interested in! We can however always still recover the full Jacobian by choosing an appropriate seed vector.
 
-###Software Organization
+### Software Organization
 The directory structure of pydif
 
   ```
